@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: stretch;
+  align-content: stretch;
+  flex: 0 0 100%;
+  height: 8vh;
+  order: 2;
+  font-family: "Lobster", cursive;
+  color: white;
+  background: #47d823;
+  border-bottom: solid bisque 2px;
+  justify-content: space-around;
+}
+
+header h1 {
+  letter-spacing: 0.5vw;
+  order: 2;
+}
+
+main {
+  display: flex;
+  order: 2;
+  flex: 0 0 100%;
+  height: 90vh;
+}
+
+.postings {
+  display: flex;
+  order: 1;
+  flex: 0 0 80%;
+  flex-flow: column nowrap;
+  background: #cbf304;
+  border-right: solid bisque 2px;
+  overflow: scroll;
+}
+
+#messages {
+  display: none;
+}
+
+#messages.active {
+    display: flex;
+    order: 3;
+    flex: 1 1 100%;
+    width: 90%;
+    flex-flow: column nowrap;
+    background: #de6a5f;
+    border-right: solid bisque 2px;
+    overflow: scroll;
+}
+
+.submit {
+  order: 3;
+  flex: 0 0 1%;
+  width: 50vw;
+  align-self: center;
+}
+
+.post-card {
+  display: block;
+  background: white;
+  order: 3;
+  margin: 10px;
+  border: black solid 2px;
+  padding: 10px;
+}
+
+.message-card {
+    display: block;
+    background: white;
+    order: 3;
+    margin: 10px;
+    border: black solid 2px;
+    padding: 10px;
+}
+
+sidebar {
+  display: flex;
+  order: 2;
+  flex: 0 0 20%;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  background: #24dd87;
+}
+
+sidebar ul {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+sidebar ul a {
+  margin: 20px;
+}
+
+footer {
+  display: flex;
+  order: 3;
+  flex: 0 0 100%;
+  height: 10vh;
+  background: #03ad28;
+  border-top: solid bisque 2px;
+  justify-content: flex-start;
+}
+
+button, input[type="submit"] {
+	color: #fff !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #ed3330;
+	padding: 5px;
+  margin: 5px;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+}
+
+
+#guest-greet.active {
+  display: inline-block;
+}
+
+#guest-greet.disabled {
+  display: none;
+}
+
+.greeting {
+  align-self: flex-start;
+  order: 1;
+  margin: 10px;
+  padding: 10px;
+}
+
+.greeting p {
+  margin: 5px;
+  letter-spacing: 2px;
+}
+
+
+#bg-modal {
+  display: none;
+}
+
+#bg-modal.active {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+#modal-content-login {
+  display: none;
+}
+
+#modal-content-login.active {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 300px;
+  background-color: rgb(150, 56, 153);
+  border-radius: 4px; 
+}
+
+.login-form > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+
+#modal-content-register {
+  display: none;
+}
+
+#modal-content-register.active {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  width: 500px;
+  height: 300px;
+  background-color: rgb(45, 194, 194);
+  border-radius: 4px;
+}
+
+.register-form > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.new-post {
+  display: none;
+  background-color: white;
+  border-radius: 4px;
+  margin: 5px;
+  border: solid black 2px;
+  text-align: center;
+}
+
+.send-message {
+  display: none;
+  background-color: white;
+  border-radius: 4px;
+  margin: 5px;
+  border: solid black 2px;
+  text-align: center;
+}
+
+.content {
+  overflow: scroll;
+  height: 20vh;
+  width: 18vw;
+  margin: 5px;
+}
+
+.description {
+  overflow: scroll;
+  height: 20vh;
+  width: 18vw;
+  margin: 5px;
+}
+
+.new-post-title {
+  margin: 10px;
+  width: 15vw;
+}
+
+.edit-post {
+  display: none;
+  flex-flow: column nowrap;
+  background-color: white;
+  border-radius: 4px;
+  margin: 5px;
+  border: solid black 2px;
+  text-align: center;
+}
+
+.edit-form > * {
+  margin: 5px;
+}
+
+.edit-description {
+  overflow: scroll;
+  height: 20vh;
+  width: 18vw;
+  margin: 5px;
+}
+
+.edit-post-title {
+  margin: 10px;
+  width: 15vw;
+}
+
+#user-menu ul {
+  display: none;
+}
+
+#user-menu ul.active {
+  display: block;
+}
+
+#logout {
+  display: none;
+}
+
+#logout.active {
+  display: block;
+  align-self: flex-end;
+  order: 3;
+
+}
+
+#loginError {
+  display: none;
+}
+
+#loginError.active {
+  display: block;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+#register-error {
+  display: none;
+}
+
+#register-error.active {
+  display: block;
+  color: red;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+#message-status {
+  display: none;
+}
+
+#message-status.active {
+  display: block;
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#post-send-status {
+  display: none;
+}
+
+#post-send-status.active {
+  display: block;
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#edit-post-status {
+  display: none;
+}
+
+#edit-post-status.active {
+  display: block;
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+}

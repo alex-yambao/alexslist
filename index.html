@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Alex's List</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <header>
+        <H1>ALEX'S LIST</H1>
+        <div class="greeting">
+            <p> Hello <span class="username"></span> and welcome! </p>
+            <p id="guest-greet"> Please <a><button class="login">Login</button></a> or <a><button
+                        class="register">Register</button></a></p>
+        </div>
+        <button id="logout">Logout</button>
+    </header>
+    <main>
+        <!-- login -->
+        <div id="bg-modal">
+            <div id="modal-content-login">
+                <form class="login-form">
+                    <h1> Login </h1>
+                    <label>Username:<input type="text" class="user-login"></label><br>
+                    <label>Password:<input type="password" class="password-login"></label><br>
+                    <p id="loginError"></p><br>
+                    <input type="submit" class="login-submit" value="Login">
+                </form>
+            </div>
+
+            <!--register -->
+            <div id="modal-content-register">
+                <form class="register-form">
+                    <h1> Register </h1>
+                    <label>Username:<input type="text" class="user-reg"></label><br>
+                    <label>Password:<input type="password" class="password-reg"></label><br>
+                    <p id="register-error"></p><br>
+                    <input type="submit" class="register-submit" value="Register"><br>
+                </form>
+            </div>
+        </div>
+
+        <!-- main postings -->
+        <section class="postings">
+        </section>
+
+        
+        <sidebar id="user-menu">
+            <ul>
+                <a><button class="post-button">New Post</button></a>
+                <br>
+                <a><button class="messages-button">Messages</messages></a>
+            </ul>
+            <section id="messages">
+            </section>
+            <!-- new post form -->
+            <div class="new-post">
+                <form class="post-form">
+                    <p id="post-send-status"></p><br>
+                    <h1> New Posting </h1>
+                    <label>Title:<input type="text" class="new-post-title"></label><br>
+                    <label>Price:<input type="text" class="price"></label><br>
+                    <label>Description:</label><textarea class="description" name="description"></textarea></label><br>
+                    <input type="submit" class="post-submit" value="Submit"><br>
+                </form>
+            </div>
+
+            <!-- edit post form -->
+            <div class="edit-post">
+                <form class="edit-form">
+                    <p id="edit-post-status"></p><br>
+                    <h1> Edit Post </h1>
+                    <label>Title:<input type="text" class="edit-post-title"></label><br>
+                    <label>Price:<input type="text" class="edit-price"></label><br>
+                    <label>Description:</label><textarea class="edit-description"
+                        name="description"></textarea></label><br>
+                    <input type="submit" class="edit-submit" value="Submit"><br>
+                </form>
+            </div>
+
+            <!-- send message form -->
+            <div class="send-message">
+                <form class="message-form">
+                    <p id="message-status"></p><br>
+                    <h1> Send Message</h1>
+                    <h2>To<span class="post-user"></span></h2>
+                    <label>Message</label><textarea class="content" name="message"></textarea></label><br>
+                    <input type="submit" class="message-submit" value="Submit"><br>
+                </form>
+            </div>
+
+        </sidebar>
+        </section>
+    </main>
+    <footer>
+        <!--- searchbar -->
+        <form class="search-form">
+            <label>
+                Search Posts:
+                <input type="text" class="search" value="Use words found in Title / User / Description" />
+            </label>
+        </form>
+    </footer>
+</body>
+
+</html>
