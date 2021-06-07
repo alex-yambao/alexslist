@@ -98,7 +98,7 @@ async function grabUserInfo() {
       renderAllPosts();
       STATE.MESSAGES = json.data.messages;
       renderMessages();
-    } 
+    }
   } catch (error) {
     console.error(error.message);
   }
@@ -113,7 +113,7 @@ async function isLoggedIn() {
     const json = await response.json();
     if (json.success === true) {
       STATE.isLoggedIn = true;
-      grabUserInfo()
+      grabUserInfo();
       STATE.user = json.data.user.username;
       getAllPosts();
     }
@@ -274,7 +274,7 @@ async function editPost(editPostID, post) {
     if (json.success === true) {
       editPostForm.trigger("reset");
       editDiv.toggle();
-      getAllPosts()
+      getAllPosts();
     }
   } catch (error) {
     editPostStatus.toggleClass("active");
@@ -514,10 +514,9 @@ searchText.on("keyup", async function (e) {
 });
 
 async function postMatches(text) {
-  let result = [];
   if (text) {
     text = text.toLowerCase();
-    STATE.POSTS.forEach(function (post) {
+    return STATE.POSTS.filter(function (post) {
       let searchTitle = post.title.toLowerCase();
       let searchDesc = post.description.toLowerCase();
       let searchUser = post.author.username.toLowerCase();
@@ -526,11 +525,10 @@ async function postMatches(text) {
         searchDesc.includes(text) ||
         searchUser.includes(text)
       ) {
-        result.push(post);
+        return post;
       }
     });
   }
-  return result;
 }
 
 function bootstrap() {
